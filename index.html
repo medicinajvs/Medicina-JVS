@@ -31,6 +31,7 @@
         }
     </script>
     <style>
+        /* Estilos específicos para a tela */
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -67,6 +68,18 @@
         .hidden-on-ok {
             display: none;
         }
+        
+        /* Novo estilo para o Modal de Download */
+        #resultadoModal .modal-content {
+            background-color: #1E1E1E;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid #2D2D2D;
+        }
+        #resultadoModal .download-icon {
+            display: block;
+            margin: 0 auto 1rem;
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-text-light min-h-screen p-4 sm:p-8">
@@ -79,12 +92,13 @@
 
         <form id="testeForm" class="space-y-12" onsubmit="collectData(event)">
 
+            <!-- Seção 1, 2, 3, 4 e 5: Mantidas idênticas -->
             <section class="space-y-6">
                 <h2 class="text-xl font-semibold section-header pl-3 py-1">Seção 1: Configuração Inicial e Navegação</h2>
                 <p class="text-sm text-text-muted italic">Instrução: Comece na tela principal (Dashboard) no modo **Treino Livre**.</p>
                 
                 <!-- Tarefa 1.1 -->
-                <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.1">
+                <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.1" data-task-name="Abrir o menu lateral e verificar links">
                     <p class="font-medium">1.1. Abra o menu lateral (botão "Menu") e verifique se todos os links estão visíveis e funcionais.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -96,7 +110,7 @@
                 </div>
 
                 <!-- Tarefa 1.2 -->
-                <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.2">
+                <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.2" data-task-name="Usar a Barra de Busca e clicar em filtro">
                     <p class="font-medium">1.2. Use a Barra de Busca no cabeçalho para procurar por um assunto ("Trauma") e clique em um resultado de filtro.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -108,7 +122,7 @@
                 </div>
                 
                 <!-- Tarefa 1.3 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.3">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.3" data-task-name="Mudar para Revisão Espaçada">
                     <p class="font-medium">1.3. Abra o modal de "Modo de aprendizado" e selecione "Revisão Espaçada". Verifique se o dashboard muda corretamente.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -120,7 +134,7 @@
                 </div>
 
                 <!-- Tarefa 1.4 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.4">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.4" data-task-name="Verificar métricas zeradas em Revisão Espaçada">
                     <p class="font-medium">1.4. Verifique se as seções de Métricas (Métricas, Gráficos, Evolução) estão **zeradas** ou refletem apenas a pequena atividade de teste anterior do modo Revisão Espaçada.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -132,7 +146,7 @@
                 </div>
 
                 <!-- Tarefa 1.5 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.5">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="1.5" data-task-name="Voltar ao Treino Livre e verificar métricas">
                     <p class="font-medium">1.5. Volte para o modo **Treino Livre** e confirme se todas as métricas e o calendário refletem os dados de treino (não estão zerados).</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -149,7 +163,7 @@
                 <p class="text-sm text-text-muted italic">Instrução: Permaneça no modo **Treino Livre** e explore os filtros.</p>
 
                  <!-- Tarefa 2.1 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.1">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.1" data-task-name="Abrir o modal 'Filtro de Assuntos'">
                     <p class="font-medium">2.1. Abra o modal "Filtro de Assuntos".</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -161,7 +175,7 @@
                 </div>
                 
                  <!-- Tarefa 2.2 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.2">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.2" data-task-name="Expandir/colapsar hierarquia">
                     <p class="font-medium">2.2. Expanda e colapse a hierarquia dos assuntos ("CIRURGIA GERAL" > "Trauma").</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -173,7 +187,7 @@
                 </div>
 
                  <!-- Tarefa 2.3 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.3">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.3" data-task-name="Selecionar sub-assunto e verificar contador">
                     <p class="font-medium">2.3. Selecione um sub-assunto específico (Ex: "Apendicite Aguda") e verifique se o contador no botão "Aplicar filtros" é atualizado corretamente.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -185,7 +199,7 @@
                 </div>
 
                  <!-- Tarefa 2.4 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.4">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.4" data-task-name="Verificar estatísticas detalhadas">
                     <p class="font-medium">2.4. No modal de filtros, marque a opção **"Ver estatísticas"** (usando o *toggle*). As estatísticas detalhadas apareceram corretamente por assunto?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -197,7 +211,7 @@
                 </div>
 
                  <!-- Tarefa 2.5 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.5">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.5" data-task-name="Aplicar filtro por dificuldade 'Errei'">
                     <p class="font-medium">2.5. Aplique o filtro por dificuldade "Errei" (`1`) e clique em "Aplicar filtros". O contador foi atualizado para mostrar apenas cards com esse *rating*?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -209,7 +223,7 @@
                 </div>
 
                  <!-- Tarefa 2.6 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.6">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="2.6" data-task-name="Iniciar Treino Livre">
                     <p class="font-medium">2.6. Clique em "Iniciar Treino Livre". O visualizador de flashcards foi carregado com os cards corretos?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -226,7 +240,7 @@
                 <p class="text-sm text-text-muted italic">Instrução: Permaneça no visualizador de flashcards.</p>
 
                  <!-- Tarefa 3.1 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.1">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.1" data-task-name="Botão 'Revelar resposta'">
                     <p class="font-medium">3.1. O botão "Revelar resposta" funciona?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -238,7 +252,7 @@
                 </div>
 
                  <!-- Tarefa 3.2 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.2">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.2" data-task-name="Painel de avaliação após revelar">
                     <p class="font-medium">3.2. Após revelar, o painel de avaliação (1-4) aparece corretamente?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -250,7 +264,7 @@
                 </div>
 
                  <!-- Tarefa 3.3 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.3">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.3" data-task-name="Atalho de teclado (Espaço/Enter)">
                     <p class="font-medium">3.3. Use os atalhos de teclado `Espaço` e `Enter` para revelar a resposta em um novo card.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -262,7 +276,7 @@
                 </div>
 
                  <!-- Tarefa 3.4 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.4">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.4" data-task-name="Atalho de teclado numérico (1-4)">
                     <p class="font-medium">3.4. Use os atalhos de teclado numéricos (`1`, `2`, `3`, `4`) para classificar um card e avançar.</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -274,7 +288,7 @@
                 </div>
 
                  <!-- Tarefa 3.5 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.5">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.5" data-task-name="Abrir o Mapa de flashcards">
                     <p class="font-medium">3.5. Abra o "Mapa de flashcards". O painel aparece e a lista reflete corretamente os cards da sessão?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -286,7 +300,7 @@
                 </div>
 
                  <!-- Tarefa 3.6 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.6">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="3.6" data-task-name="Voltar ao Dashboard e verificar Treino Livre">
                     <p class="font-medium">3.6. Classifique 3 cards e volte para o Dashboard. As métricas do Treino Livre foram atualizadas?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -303,7 +317,7 @@
                 <p class="text-sm text-text-muted italic">Instrução: Mude para o modo **Revisão Espaçada**.</p>
 
                  <!-- Tarefa 4.1 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.1">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.1" data-task-name="Verificar métricas zeradas no RE">
                     <p class="font-medium">4.1. Verifique se as métricas "Tempo estudado" e "Sequência" estão em `00:00:00` e `0d` (a menos que já tenha estudado no RE hoje).</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -315,7 +329,7 @@
                 </div>
 
                  <!-- Tarefa 4.2 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.2">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.2" data-task-name="Clicar em Revisar agora (RE)">
                     <p class="font-medium">4.2. Clique em "Revisar agora" (o contador do botão deve ser zero ou o número total de cards para hoje).</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -327,7 +341,7 @@
                 </div>
 
                  <!-- Tarefa 4.3 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.3">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.3" data-task-name="Classificar 5 cards no RE">
                     <p class="font-medium">4.3. Classifique 5 cards neste modo (dê ratings diferentes: 1, 4, 2, 3, 4).</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -339,7 +353,7 @@
                 </div>
 
                  <!-- Tarefa 4.4 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.4">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.4" data-task-name="Verificar atualização das métricas do RE">
                     <p class="font-medium">4.4. Volte ao Dashboard e confirme: **Apenas as métricas de Revisão Espaçada foram atualizadas** (Progresso Hoje, Tempo Estudado, Sequência, Gráficos inferiores).</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -351,7 +365,7 @@
                 </div>
 
                  <!-- Tarefa 4.5 -->
-                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.5">
+                 <div class="bg-card-bg p-4 rounded-lg border border-border-color task-item" data-task-id="4.5" data-task-name="Voltar ao Treino Livre e verificar isolamento">
                     <p class="font-medium">4.5. Volte para o modo **Treino Livre**. As métricas de Treino Livre permaneceram inalteradas pelas atividades do RE (passo 4.3)?</p>
                     <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div class="flex items-center status-radio flex-shrink-0">
@@ -398,16 +412,24 @@
             </section>
             
             <button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-black font-bold py-3 rounded-lg transition">
-                Enviar Respostas
+                Gerar Relatório em Arquivo de Texto
             </button>
         </form>
 
-        <div id="resultadoModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4">
-            <div class="bg-card-bg p-8 rounded-lg max-w-xl w-full border border-border-color">
-                <h3 class="text-2xl font-bold text-success mb-4">✨ Respostas Coletadas! ✨</h3>
-                <p class="text-text-light mb-4">Obrigado por testar! Aqui estão os dados brutos para você copiar e enviar:</p>
-                <textarea id="resultadoDados" rows="15" readonly class="w-full bg-dark-bg border border-border-color rounded-md p-2 text-sm"></textarea>
-                <button onclick="copyToClipboard()" class="mt-4 bg-primary hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded-lg">Copiar Dados</button>
+        <!-- NOVO MODAL DE SUCESSO E INSTRUÇÕES DE DOWNLOAD -->
+        <div id="resultadoModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center p-4 z-50">
+            <div class="modal-content max-w-lg w-full text-center">
+                <svg class="download-icon w-16 h-16 text-primary mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-text-light mb-2">Download Pronto!</h3>
+                <p class="text-text-muted mb-6">Seu relatório de respostas foi gerado com sucesso. Clique no botão abaixo para baixar o arquivo.</p>
+                
+                <!-- Botão de Download Real -->
+                <a id="downloadLink" href="#" download="Relatorio_Teste_Usabilidade.txt" onclick="closeModal()" class="inline-block bg-primary hover:bg-opacity-90 text-black font-bold py-2 px-4 rounded-lg">
+                    Baixar Relatório (.txt)
+                </a>
+                
                 <button onclick="closeModal()" class="mt-4 ml-4 bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg">Fechar</button>
             </div>
         </div>
@@ -415,6 +437,9 @@
     </div>
 
     <script>
+        // Variável global para armazenar o link do Blob
+        let currentBlobUrl = null;
+
         // Função para mostrar/esconder o campo de sugestão
         function toggleSuggestion(radio) {
             const taskId = radio.name.split('_')[1];
@@ -430,46 +455,81 @@
             }
         }
 
-        // Função para coletar e exibir os dados
-        function collectData(event) {
-            event.preventDefault();
-            const form = document.getElementById('testeForm');
-            const data = {};
-            const taskItems = form.querySelectorAll('.task-item');
+        // Função para coletar e formatar os dados para o corpo do TXT
+        function formatDataForTxt(form) {
+            let report = "=== RELATÓRIO DE TESTE DE USABILIDADE - FLASHCARDS 2.0 ===\n\n";
+            report += `Data do Envio: ${new Date().toLocaleString('pt-BR')}\n`;
+            report += "--------------------------------------------------------\n\n";
 
             // Coleta dados das tarefas de OK/Erro
+            report += ">>> SEÇÕES DE TESTE (1 a 4)\n\n";
+            const taskItems = form.querySelectorAll('.task-item');
             taskItems.forEach(item => {
                 const taskId = item.getAttribute('data-task-id');
-                const status = form.querySelector(`input[name="status_${taskId}"]:checked`)?.value || 'Não respondido';
+                const taskText = item.querySelector('p.font-medium').textContent.trim();
+                const status = form.querySelector(`input[name="status_${taskId}"]:checked`)?.value || 'NÃO RESPONDIDO';
                 const sugestao = form.querySelector(`textarea[name="sugestao_${taskId}"]`).value.trim();
-
-                data[`Tarefa ${taskId}`] = {
-                    Status: status,
-                    Sugestão: sugestao || (status === 'OK' ? 'Nenhuma' : '---')
-                };
+                
+                report += `[${taskId}] ${taskText.replace(/\s+/g, ' ')}\n`;
+                report += `  STATUS: ${status}\n`;
+                report += `  SUGESTÃO/ERRO: ${sugestao || (status === 'OK' ? 'Nenhuma' : '(Sem detalhes)')}\n\n`;
             });
             
             // Coleta dados do feedback geral
-            data["Feedback Geral"] = {
-                "Nota Geral (1-5)": form.elements.nota_geral.value,
-                "Clareza Separação": form.elements.clareza_separacao.value.trim(),
-                "Atalhos Úteis": form.elements.atalhos_uteis.value.trim(),
-                "O que mais gostou": form.elements.o_que_mais_gostou.value.trim(),
-                "Correção Urgente": form.elements.correcao_urgente.value.trim()
-            };
+            report += "--------------------------------------------------------\n\n";
+            report += ">>> FEEDBACK GERAL (Seção 5)\n\n";
+            
+            report += `5.1 Nota Geral (1-5): ${form.elements.nota_geral.value}\n\n`;
+            
+            report += `5.2 Clareza da Separação (Treino Livre/Revisão Espaçada):\n`;
+            report += `   > ${form.elements.clareza_separacao.value.trim() || '(Não comentado)'}\n\n`;
+            
+            report += `5.3 Atalhos de Teclado Úteis:\n`;
+            report += `   > ${form.elements.atalhos_uteis.value.trim() || '(Não comentado)'}\n\n`;
+            
+            report += `5.4 O que mais gostou:\n`;
+            report += `   > ${form.elements.o_que_mais_gostou.value.trim()}\n\n`;
 
-            const resultTextarea = document.getElementById('resultadoDados');
-            resultTextarea.value = JSON.stringify(data, null, 2);
-            document.getElementById('resultadoModal').classList.add('flex');
-            document.getElementById('resultadoModal').classList.remove('hidden');
+            report += `5.5 O que deve ser corrigido com urgência:\n`;
+            report += `   > ${form.elements.correcao_urgente.value.trim()}\n\n`;
+
+            report += "=== FIM DO RELATÓRIO ===";
+            return report;
         }
 
-        // Função para copiar dados
-        function copyToClipboard() {
-            const textarea = document.getElementById('resultadoDados');
-            textarea.select();
-            document.execCommand('copy');
-            alert('Dados copiados para a área de transferência!');
+        // Função principal para submissão e download
+        function collectData(event) {
+            event.preventDefault();
+            const form = document.getElementById('testeForm');
+            const downloadLink = document.getElementById('downloadLink');
+            
+            // 1. Verifica a validade do formulário antes de tentar gerar
+            if (!form.reportValidity()) {
+                return; 
+            }
+            
+            // 2. Coleta e formata os dados
+            const reportText = formatDataForTxt(form);
+            
+            // 3. Cria um Blob (arquivo) a partir do texto
+            const blob = new Blob([reportText], { type: 'text/plain;charset=utf-8' });
+            
+            // 4. Libera a URL do Blob anterior, se houver
+            if (currentBlobUrl) {
+                URL.revokeObjectURL(currentBlobUrl);
+            }
+
+            // 5. Cria a nova URL do Blob e atualiza o link de download
+            currentBlobUrl = URL.createObjectURL(blob);
+            downloadLink.href = currentBlobUrl;
+            
+            // Gera um nome de arquivo dinâmico
+            const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+            downloadLink.download = `Relatorio_Teste_${dateStr}.txt`;
+            
+            // 6. Mostra o modal de download
+            document.getElementById('resultadoModal').classList.add('flex');
+            document.getElementById('resultadoModal').classList.remove('hidden');
         }
         
         // Função para fechar o modal
